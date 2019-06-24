@@ -4,12 +4,11 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive tests/**.js",
+    "test": "mocha --compilers js:@babel/register --recursive tests/**.js",
     "build": "babel lib --out-dir dist",
     "lint": "eslint lib tests",
     "fix": "eslint --fix lib tests",
-    "preversion": "yarn run lint && yarn run test",
-    "prepublish": "yarn run build"
+    "postinstall": "yarn run build"
   },
   "keywords": [
     "eslint",
@@ -30,12 +29,12 @@
     "eslint": ">=2.x"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "@evo/eslint-config-uaprom": "^2.0.2",
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-register": "^6.23.0",
     "eslint": ">=2.x",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
