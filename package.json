@@ -9,8 +9,7 @@
     "lint": "eslint lib tests",
     "fix": "eslint --fix lib tests",
     "preversion": "yarn run lint && yarn run test",
-    "prepublish": "yarn run build",
-    "postinstall": "yarn run build"
+    "prepublish": "yarn run build"
   },
   "keywords": [
     "eslint",
